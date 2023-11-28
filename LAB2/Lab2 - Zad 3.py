@@ -155,6 +155,6 @@ def main(tab,n):
 
 
 if __name__ == '__main__':
-    n = 7
+    n = 25
     tab = calculate(n)
     main(tab,n)
