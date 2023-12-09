@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import sys
 import math
 
@@ -116,9 +115,12 @@ def render(time):
     theta_pi = theta * (math.pi / 180)
     phi_pi = phi * (math.pi / 180)
 
-    gluLookAt(xeye_val, yeye_val, zeye_val, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0)
-
-
+    phi_test = phi%360
+    
+    if(phi_test>90 and phi_test<270):
+        gluLookAt(xeye_val, yeye_val, zeye_val, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0)
+    else:
+        gluLookAt(-xeye_val, yeye_val, -zeye_val, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0)
 
     if left_mouse_button_pressed:
         theta += delta_x * pix2angle
